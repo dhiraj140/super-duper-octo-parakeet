@@ -22,24 +22,27 @@ const COLLEGE_CSV_MAP = {
     'college1': {
         name: 'Springfield Public School',
         // REPLACE THIS URL WITH YOUR OWN GOOGLE SHEET CSV URL
-        csvUrl: 'https://docs.google.com/spreadsheets/d/1YOUR_SHEET_ID_1/gviz/tq?tqx=out:csv'
+        csvUrl: 'https://docs.google.com/spreadsheets/d/1Z3I8OzAkb627gxcg6BqCOHcr9X_d7YZeaGLXNK0UVjc/gviz/tq?tqx=out:csv'
     },
     
     // Example College 2 - Greenwood High School
     'college2': {
         name: 'Greenwood High School',
         // REPLACE THIS URL WITH YOUR OWN GOOGLE SHEET CSV URL
-        csvUrl: 'https://docs.google.com/spreadsheets/d/1YOUR_SHEET_ID_2/gviz/tq?tqx=out:csv'
+        csvUrl: 'https://docs.google.com/spreadsheets/d/1Z3I8OzAkb627gxcg6BqCOHcr9X_d7YZeaGLXNK0UVjc/gviz/tq?tqx=out:csv'
     },
     
     // Example College 3 - Riverdale College
     'college3': {
         name: 'Riverdale College',
         // REPLACE THIS URL WITH YOUR OWN GOOGLE SHEET CSV URL
-        csvUrl: 'https://docs.google.com/spreadsheets/d/1YOUR_SHEET_ID_3/gviz/tq?tqx=out:csv'
+        csvUrl: 'https://docs.google.com/spreadsheets/d/1Z3I8OzAkb627gxcg6BqCOHcr9X_d7YZeaGLXNK0UVjc/gviz/tq?tqx=out:csv'
     }
     
-    // TO ADD MORE COLLEGES, COPY THE FORMAT ABOVE AND PASTE HERE:
+  'college4': {
+    name: 'College Name',
+    csvUrl: 'https://docs.google.com/spreadsheets/d/1Z3I8OzAkb627gxcg6BqCOHcr9X_d7YZeaGLXNK0UVjc/gviz/tq?tqx=out:csv'
+}  // TO ADD MORE COLLEGES, COPY THE FORMAT ABOVE AND PASTE HERE:
     // 'college4': {
     //     name: 'Your College Name',
     //     csvUrl: 'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/gviz/tq?tqx=out:csv'

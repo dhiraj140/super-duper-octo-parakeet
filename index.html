@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Result Portal - Multi-College System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <i class="fas fa-graduation-cap logo-icon"></i>
+                <h1 class="site-title">Online Result Portal</h1>
+            </div>
+            <p class="site-subtitle">Multi-College Examination Result System</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="main-card">
+            <div class="card-header">
+                <h2><i class="fas fa-search"></i> Check Your Result</h2>
+                <p>Select your college, class, and enter your roll number</p>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-container">
+                <!-- College Selector -->
+                <div class="form-group">
+                    <label for="collegeSelect"><i class="fas fa-university"></i> Select College / School</label>
+                    <div class="select-wrapper">
+                        <select id="collegeSelect" class="form-control">
+                            <option value="" disabled selected>-- Choose Your College --</option>
+                            <!-- 
+                                HOW TO ADD NEW COLLEGES:
+                                1. Add a new option below with a unique value (e.g., college4)
+                                2. Update the COLLEGE_CSV_MAP in script.js with the new college name and CSV URL
+                                3. Make sure the CSV has the exact format: roll_no,student_name,standard,marathi,hindi,english,maths,science,total,result
+                            -->
+                            <option value="college1">Springfield Public School</option>
+                            <option value="college2">Greenwood High School</option>
+                            <option value="college3">Riverdale College</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-arrow"></i>
+                    </div>
+                    <div class="college-info" id="collegeInfo">
+                        <i class="fas fa-info-circle"></i> Please select a college to continue
+                    </div>
+                </div>
+
+                <!-- Standard Selector -->
+                <div class="form-group">
+                    <label for="standardSelect"><i class="fas fa-chalkboard-teacher"></i> Select Standard</label>
+                    <div class="select-wrapper">
+                        <select id="standardSelect" class="form-control">
+                            <option value="" disabled selected>-- Select Your Class --</option>
+                            <option value="5">5th Standard</option>
+                            <option value="6">6th Standard</option>
+                            <option value="7">7th Standard</option>
+                            <option value="8">8th Standard</option>
+                            <option value="9">9th Standard</option>
+                            <option value="10">10th Standard</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+
+                <!-- Roll Number Input -->
+                <div class="form-group">
+                    <label for="rollNumber"><i class="fas fa-id-card"></i> Enter Roll Number</label>
+                    <input type="text" id="rollNumber" class="form-control" placeholder="e.g., 2024001">
+                    <div class="input-hint">Enter your unique roll number (numbers only)</div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="checkResultBtn" class="btn btn-primary">
+                        <i class="fas fa-check-circle"></i> Check Result
+                    </button>
+                    <button id="resetBtn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Reset Form
+                    </button>
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="loadingIndicator" class="loading-indicator">
+                    <div class="spinner"></div>
+                    <p>Fetching result data...</p>
+                </div>
+
+                <!-- Error Display -->
+                <div id="errorDisplay" class="error-display"></div>
+            </div>
+        </main>
+
+        <!-- Result Display Area -->
+        <section id="resultSection" class="result-section">
+            <!-- Result will be displayed here dynamically -->
+        </section>
+
+        <!-- Instructions Section -->
+        <section class="instructions-section">
+            <h3><i class="fas fa-info-circle"></i> How to Use This Portal</h3>
+            <div class="instructions-grid">
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h4>Select College</h4>
+                    <p>Choose your college/school from the dropdown list</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4>Select Class</h4>
+                    <p>Select your standard/class (5th to 10th)</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h4>Enter Roll Number</h4>
+                    <p>Input your unique roll number as provided by your college</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h4>View & Print</h4>
+                    <p>Check your result and print it if needed</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Online Result Portal</span>
+                </div>
+                <p class="footer-text">© 2023 Online Result Portal. A centralized platform for multi-college results.</p>
+                <p class="footer-note">This portal uses Google Sheets as a database. Results are fetched in real-time.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
